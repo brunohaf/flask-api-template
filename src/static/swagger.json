@@ -1,0 +1,66 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "This project is a base for further implementation of Python RESTful Flask APIS",
+      "version": "1.0.0",
+      "title": "Python Flask RESTful Template",
+      "contact": {
+        "email": "bruno.hafonseca@gmail.com"
+      },
+      "license": {
+        "name": "MIT",
+        "url": "https://raw.githubusercontent.com/brunohaf/py_template_api/master/LICENSE"
+      }
+    },
+    "tags": [
+      {
+        "name": "Artefact's Metadata Request",
+        "description":  "API for requesting and return data as the o'l Flask RESTful way"
+      }
+    ],
+  "paths": {
+    "/ArtefactMetadata": {
+      "get": {
+        "tags": [
+          "Artefact's Metadata Request"
+        ],
+        "summary": "Returns Artefact's metadata ",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/components/schemas/artefact_service"
+            }
+          },
+          "400": {
+            "description": "An error has occurred"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "artefact_service": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "format": "string",
+              "description": "The name of the Artefact."
+            },
+            "type": {
+              "type": "number",
+              "format": "float",
+              "description": "Artefact's type."
+            },
+            "description": {
+              "type": "string",
+              "format": "string",
+              "description": "Artefact's description."
+            }
+          }
+        }
+      }
+    }
+  }
